@@ -21,11 +21,15 @@ app.get("/news.html", (req, res) => {res.sendFile(__dirname + "/public/newspg/pu
 
 // Gmail SMTP (API)
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // Use TLS
     auth: {
         user: "indianforestmanagement@gmail.com",
         pass: "hbevvzeppxbbtwwj"
-    }
+    },
+    connectionTimeout: 5000,
+    socketTimeout: 5000
 });
 
 // Signup

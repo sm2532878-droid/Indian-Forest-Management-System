@@ -42,37 +42,58 @@ app.post("/signup", (req, res) => {
 });
 
 // Send OTP
-// Send OTP
 app.post("/send-otp", (req, res) => {
-    const { email } = req.body;
+    try {
+        const { email } = req.body;
 
-    if (!users.find(u => u.email === email)) {
-        return res.json({
-            success: false,
-            message: "User not registered!"
+        if (!users.find(u => u.email === email)) {
+            return res.json({
+                success: false,
+                message: "User not registered!"
+            });
+        }
+
+        const otp = Math.floor(100000 + Math.random() * 900000);
+
+        otpStore[email] = otp;
+
+        console.log("OTP Requested for", email);
+        console.log("OTP is", otp);
+
+        // Send OTP via email
+        const mailOptions = {
+            from: "indianforestmanagement@gmail.com",
+            to: email,
+            subject: "Your OTP for Indian Forest Management System",
+            html: `<h2>Your OTP Code</h2>
+                   <p>Your One-Time Password (OTP) is:</p>
+                   <h1 style="color: green;">${otp}</h1>
+                   <p>This OTP is valid for 10 minutes.</p>
+                   <p>Do not share this OTP with anyone.</p>`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error("Email Sending Error:", error);
+                return res.status(500).json({
+                    success: false,
+                    message: "Failed to send OTP"
+                });
+            } else {
+                console.log("Email sent:", info.response);
+                res.json({
+                    success: true,
+                    message: "OTP sent to your email successfully",
+                });
+            }
         });
-    }
-
-    const otp = Math.floor(100000 + Math.random() * 900000);
-
-    otpStore[email] = otp;
-
-    console.log("OTP Requested for", email);
-    console.log("OTP is", otp);
-
-    res.json({
-        success: true,
-        message: "OTP generated successfully",
-        otp: otp
-    });
-
     } catch (error) {
 
-        console.error("Email Sending Error:", error);
+        console.error("Error:", error);
 
         res.status(500).json({
             success: false,
-            message: "Failed to send OTP"
+            message: "Failed to process OTP request"
         });
     }
 });

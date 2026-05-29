@@ -42,10 +42,9 @@ app.post("/signup", (req, res) => {
 });
 
 // Send OTP
-app.post("/send-otp", async (req, res) => {
+// Send OTP
+app.post("/send-otp", (req, res) => {
     const { email } = req.body;
-
-    console.log("OTP Requested for", email);
 
     if (!users.find(u => u.email === email)) {
         return res.json({
@@ -55,24 +54,17 @@ app.post("/send-otp", async (req, res) => {
     }
 
     const otp = Math.floor(100000 + Math.random() * 900000);
+
     otpStore[email] = otp;
 
-    console.log("Generated OTP:", otp);
+    console.log("OTP Requested for", email);
+    console.log("OTP is", otp);
 
-    try {
-        const info = await transporter.sendMail({
-            from: "indianforestmanagement@gmail.com",
-            to: email,
-            subject: "Forest Management System OTP",
-            text: `Your login OTP is: ${otp}`
-        });
-
-        console.log("Email Sent Successfully:", info.response);
-
-        res.json({
-            success: true,
-            message: "OTP sent successfully"
-        });
+    res.json({
+        success: true,
+        message: "OTP generated successfully",
+        otp: otp
+    });
 
     } catch (error) {
 

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Endangered Species of India | Wildlife Conservation Portal</title>
+    <link rel="stylesheet" href="EndangeredSpecies.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<!-- NAVIGATION -->
+<nav>
+
+    <ul class="menu">
+
+        <!-- HOME -->
+        <li>
+            <a href="/landing">Home</a>
+        </li>
+
+        <!-- ANIMALS -->
+        <li class="dropdown">
+
+            <a href="#">Animals ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/indianmammals/indianmammalspg1.html">
+                        Indian Mammals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/EndangeredSpecies/EndangeredSpecies.html">
+                        Endangered Species
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal Census/animalcensus.html">
+                        Animal Census
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- SAFARI -->
+        <li class="dropdown">
+
+            <a href="#">Safari Booking ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/jeepsafari/jeepsafari.html">
+                        Jeep Safari
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/safarirules.html">
+                        Safari Rules
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- UPDATES -->
+        <li class="dropdown">
+
+            <a href="#">Latest Updates ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/news.html">
+                        Wildlife News
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal census report/animalcensusreport.html">
+                        Animal Census Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/tourist advisory/tourist advisory.html">
+                        Tourist Advisory
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- NATIONAL PARKS -->
+        <li class="dropdown">
+
+            <a href="#">National Parks ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/national parks/national parks.html">
+                        National Parks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Wildlife Sanctuaries/Wildlife Sanctuaries.html">
+                        Wildlife Sanctuaries
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Biosphere Reserves/Biosphere Reserves.html">
+                        Biosphere Reserves
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- LOGIN -->
+        <li class="dropdown">
+
+            <a href="#">Login ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/admin-logpg">
+                        Admin Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/login">
+                        User Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/signup">
+                        User Signup
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+    <h1>Endangered Species of India</h1>
+    <p>Species facing high risk of extinction across Indian ecosystems</p>
+</header>
+
+<!-- SEARCH BAR (UI) -->
+<!-- SEARCH BAR -->
+
+<section class="search-section">
+
+<input type="text"
+       id="searchInput"
+       placeholder="Search endangered species by name, threat, or habitat">
+
+</section>
+
+<!-- SEARCH SCRIPT -->
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function () {
+
+    const filter =
+    searchInput.value.toLowerCase();
+
+    const cards =
+    document.querySelectorAll(".animal-card");
+
+    cards.forEach(function(card){
+
+        const text =
+        card.textContent.toLowerCase();
+
+        if(text.includes(filter)){
+
+            card.style.display = "block";
+
+        }
+
+        else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
+
+</script>
+
+<!-- INTRODUCTION -->
+<section class="content">
+    <p>
+        India is home to a vast range of endangered species due to habitat loss,
+        climate change, poaching, pollution, and human-wildlife conflict.
+        Conservation status is primarily assessed by the
+        <strong>International Union for Conservation of Nature (IUCN)</strong>.
+    </p>
+
+    <p>
+        Species classified as <strong>Endangered (EN)</strong> or
+        <strong>Critically Endangered (CR)</strong> face a very high risk of extinction
+        if conservation measures are not strengthened.
+    </p>
+</section>
+
+<!-- ENDANGERED MAMMALS -->
+<section class="animal-grid">
+
+    <div class="animal-card">
+        <img src=https://images.bhaskarassets.com/thumb/1200x900/web2images/521/2023/05/11/_1683780427.jpg>
+        <h3>Bengal Tiger</h3>
+        <p><strong>Status:</strong> Endangered</p>
+        <p><strong>Threats:</strong> Poaching, habitat loss</p>
+        <p><strong>Latest Info:</strong> India recorded 3,167 tigers (2022 census)</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://i.dailymail.co.uk/1s/2019/08/09/12/17089910-7340949-The_lion_cub_pictured_was_found_in_a_storage_room_with_pressure_-a-1_1565350569878.jpg">
+        <h3>Asiatic Lion</h3>
+        <p><strong>Status:</strong> Endangered</p>
+        <p><strong>Threats:</strong> Limited habitat, disease risk</p>
+        <p><strong>Range:</strong> Gir Forest, Gujarat</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://th-i.thgim.com/public/news/national/kerala/jpchz1/article34978461.ece/alternates/LANDSCAPE_1200/25ki-Elephant">
+        <h3>Indian Elephant</h3>
+        <p><strong>Status:</strong> Endangered</p>
+        <p><strong>Threats:</strong> Habitat fragmentation</p>
+        <p><strong>Latest:</strong> Human-elephant conflict rising</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://savethesnowleopardsnow.weebly.com/uploads/2/8/7/6/28764925/524844_orig.jpg">
+        <h3>Snow Leopard</h3>
+        <p><strong>Status:</strong> Vulnerable</p>
+        <p><strong>Threats:</strong> Climate change</p>
+        <p><strong>Region:</strong> Himalayan belt</p>
+    </div>
+    <div class="animal-card">
+    <img src="https://www.pbs.org/wnet/nature/files/2023/02/pexels-flickr-145970-scaled-e1677618270354.jpg">
+    <h3>Red Panda</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Threats:</strong> Habitat destruction, climate change</p>
+    <p><strong>Region:</strong> Sikkim & Arunachal Pradesh</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://cdn.thewire.in/wp-content/uploads/2018/01/29171143/Dolphin02.jpg">
+    <h3>Gangetic River Dolphin</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Threats:</strong> Water pollution, fishing nets</p>
+    <p><strong>Region:</strong> Ganga & Brahmaputra Rivers</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://lh5.googleusercontent.com/proxy/JqNn3nu6UxfVwENCVtdPaJs3B__vAQPhfAMGRBiCVTb0-s6zOybb1ad2euT7ABDXCMbFkYbpLDM-_KdZ2L_cB7tfZU9P2LnHeSoEunp3">
+    <h3>Indian Pangolin</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Threats:</strong> Illegal wildlife trade</p>
+    <p><strong>Region:</strong> Across India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://d18x2uyjeekruj.cloudfront.net/wp-content/uploads/2024/12/lion.jpg">
+    <h3>Lion-tailed Macaque</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Threats:</strong> Deforestation</p>
+    <p><strong>Region:</strong> Western Ghats</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Nilgiri_Tahr_at_Eravikulam_National_Park.jpg">
+    <h3>Nilgiri Tahr</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Threats:</strong> Habitat fragmentation</p>
+    <p><strong>Region:</strong> Nilgiri Hills</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://static.toiimg.com/thumb/msid-114537337,width-1280,height-720,resizemode-4/114537337.jpg">
+    <h3>Hoolock Gibbon</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Threats:</strong> Forest loss & hunting</p>
+    <p><strong>Region:</strong> Northeast India</p>
+</div>
+
+</section>
+
+<!-- ENDANGERED BIRDS & REPTILES -->
+<section class="content">
+    <h2>Critically Endangered Birds & Reptiles</h2>
+    <ul>
+        <li><strong>Great Indian Bustard (CR)</strong> – Threatened by power lines</li>
+        <li><strong>White-rumped Vulture (CR)</strong> – Decline due to diclofenac</li>
+        <li><strong>Gharial (CR)</strong> – River pollution & sand mining</li>
+        <li><strong>Hawksbill Turtle (CR)</strong> – Marine pollution</li>
+    </ul>
+</section>
+
+<!-- MARINE & AQUATIC -->
+<section class="content">
+    <h2>Endangered Marine Species</h2>
+    <ul>
+        <li><strong>Gangetic River Dolphin (EN)</strong> – India’s National Aquatic Animal</li>
+        <li><strong>Dugong (VU)</strong> – Seagrass loss</li>
+        <li><strong>Whale Shark (EN)</strong> – Overfishing</li>
+    </ul>
+</section>
+
+<!-- SOURCES & REFERENCES -->
+<section class="content">
+    <h2>Sources & Recent Articles</h2>
+    <ul>
+        <li>
+            IUCN Red List of Threatened Species  
+            <br>
+            https://www.iucnredlist.org
+        </li>
+        <li>
+            Ministry of Environment, Forest and Climate Change (MoEFCC) – India  
+            <br>
+            https://moef.gov.in
+        </li>
+        <li>
+            “India’s Tiger Population Rises to 3,167” – The Hindu (2023)  
+            <br>
+            https://www.thehindu.com
+        </li>
+        <li>
+            “Great Indian Bustard on the Brink of Extinction” – Down To Earth  
+            <br>
+            https://www.downtoearth.org.in
+        </li>
+        <li>
+            “Human-Elephant Conflict a Growing Concern” – Indian Express  
+            <br>
+            https://indianexpress.com
+        </li>
+    </ul>
+</section>
+
+<footer>
+    <p>© Indian Forest & Wildlife Management System  | Endangered Species Database</p>
+</footer>
+
+</body>
+</html>

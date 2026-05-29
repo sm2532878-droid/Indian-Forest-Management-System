@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Census Report | India</title>
+    <link rel="stylesheet" href="animalcensusreport.css">
+</head>
+<body>
+    <nav>
+
+<ul class="menu">
+
+<li><a href="/landing">Home</a></li>
+
+<!-- ANIMALS -->
+        <li class="dropdown">
+
+            <a href="#">Animals ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/indianmammals/indianmammalspg1.html">
+                        Indian Mammals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/EndangeredSpecies/EndangeredSpecies.html">
+                        Endangered Species
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal Census/animalcensus.html">
+                        Animal Census
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+  <!-- SAFARI -->
+        <li class="dropdown">
+
+            <a href="#">Safari Booking ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/jeepsafari/jeepsafari.html">
+                         Jeep Safari
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/safarirules.html">
+                        Safari Rules
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+        <!-- UPDATES -->
+        <li class="dropdown">
+
+            <a href="#">Latest Updates ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/news.html">
+                        Wildlife News
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal census report/animalcensusreport.html">
+                        Animal Census Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/tourist advisory/tourist advisory.html">
+                        Tourist Advisory
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+ <!-- NATIONAL PARKS -->
+        <li class="dropdown">
+
+            <a href="#">National Parks ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/national parks/national parks.html">
+                        National Parks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Wildlife Sanctuaries/Wildlife Sanctuaries.html">
+                        Wildlife Sanctuaries
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Biosphere Reserves/Biosphere Reserves.html">
+                        Biosphere Reserves
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+ <!-- LOGIN -->
+        <li class="dropdown">
+
+            <a href="#">Login ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/admin-logpg">
+                        Admin Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/login">
+                        User Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/signup">
+                        User Signup
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+</ul>
+
+</nav>
+
+<div class="page-header">
+    <h1>Animal Census Report – India</h1>
+    <p>Official wildlife population data published by Forest Departments</p>
+</div>
+
+
+<section class="content">
+    <table class="species-table" id="censusTable">
+        <tr>
+            <th>Animal</th>
+            <th>Population</th>
+            <th>Region</th>
+            <th>Census Year</th>
+        </tr>
+    </table>
+</section>
+
+
+<script>
+fetch("/api/census")
+.then(res => res.json())
+.then(data => {
+    const table = document.getElementById("censusTable");
+
+    data.reverse().forEach(item => {
+        const row = `
+        <tr>
+            <td>${item.animal}</td>
+            <td>${item.population}</td>
+            <td>${item.region}</td>
+            <td>${item.year}</td>
+        </tr>`;
+        table.innerHTML += row;
+    });
+});
+</script>
+
+</body>
+<footer>
+    <p>© Indian Forest & Wildlife Management System </p>
+</footer>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "animal": "Bengal Tiger",
+    "population": "3682",
+    "region": "India",
+    "year": "2022"
+  },
+  {
+    "animal": "Asiatic Lion",
+    "population": "674",
+    "region": "Gujarat,India",
+    "year": "2020"
+  },
+  {
+    "animal": "Indian Elephant",
+    "population": "29964",
+    "region": "India",
+    "year": "2024"
+  },
+  {
+    "animal": "One-Horned Rhinoceros",
+    "population": "4014",
+    "region": "India ",
+    "year": "2022"
+  },
+  {
+    "animal": "One-Horned Rhinoceros",
+    "population": "4014",
+    "region": "India ",
+    "year": "2022"
+  }
+]

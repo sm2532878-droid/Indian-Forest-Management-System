@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Admin | Update Animal Census
+</title>
+
+<link rel="stylesheet"
+      href="admin-reports.css">
+
+</head>
+
+<body>
+
+<header class="page-header">
+
+<h1>
+Admin Panel – Update Animal Census
+</h1>
+
+</header>
+
+<section class="content">
+
+<form action="/admin/add-census"
+      method="POST">
+
+<input type="text"
+       name="animal"
+       placeholder="Animal Name"
+       required>
+
+<input type="number"
+       name="population"
+       placeholder="Estimated Population"
+       required>
+
+<input type="text"
+       name="region"
+       placeholder="Region / State"
+       required>
+
+<input type="number"
+       name="year"
+       placeholder="Census Year"
+       required>
+
+<button type="submit">
+
+Submit Census Report
+
+</button>
+
+</form>
+
+</section>
+
+</body>
+
+</html>

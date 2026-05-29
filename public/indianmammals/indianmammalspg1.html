@@ -1,0 +1,511 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Indian Mammals | Indian Forest &amp; Biodiversity Portal</title>
+    <link rel="stylesheet" href="indianmammalspg1.css">
+</head>
+
+
+
+<body>
+
+<!-- NAVIGATION -->
+<!-- NAVIGATION -->
+<nav>
+
+    <ul class="menu">
+
+        <!-- HOME -->
+        <li>
+            <a href="/landing">Home</a>
+        </li>
+
+        <!-- ANIMALS -->
+        <li class="dropdown">
+
+            <a href="#">Animals ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/indianmammals/indianmammalspg1.html">
+                        Indian Mammals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/EndangeredSpecies/EndangeredSpecies.html">
+                        Endangered Species
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal Census/animalcensus.html">
+                        Animal Census
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- SAFARI -->
+        <li class="dropdown">
+
+            <a href="#">Safari Booking ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/jeepsafari/jeepsafari.html">
+                         Jeep Safari
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/safarirules.html">
+                        Safari Rules
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- UPDATES -->
+        <li class="dropdown">
+
+            <a href="#">Latest Updates ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/news.html">
+                        Wildlife News
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal census report/animalcensusreport.html">
+                        Animal Census Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/tourist advisory/tourist advisory.html">
+                        Tourist Advisory
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- NATIONAL PARKS -->
+        <li class="dropdown">
+
+            <a href="#">National Parks ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/national parks/national parks.html">
+                        National Parks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Wildlife Sanctuaries/Wildlife Sanctuaries.html">
+                        Wildlife Sanctuaries
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Biosphere Reserves/Biosphere Reserves.html">
+                        Biosphere Reserves
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- LOGIN -->
+        <li class="dropdown">
+
+            <a href="#">Login ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/admin-logpg">
+                        Admin Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/login">
+                        User Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/signup">
+                        User Signup
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+    <h1>Indian Mammals</h1>
+    <p>Authoritative information on mammal species found across India</p>
+</header>
+
+<!-- SEARCH BAR (UI) -->
+<!-- SEARCH BAR -->
+
+<section class="search-section">
+
+<input type="text"
+       id="searchInput"
+       placeholder="Search mammals by name, habitat, status, or location">
+
+</section>
+
+
+<!-- SEARCH SCRIPT -->
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function () {
+
+    const filter =
+    searchInput.value.toLowerCase();
+
+    const cards =
+    document.querySelectorAll(".animal-card");
+
+    cards.forEach(function(card){
+
+        const text =
+        card.textContent.toLowerCase();
+
+        if(text.includes(filter)){
+
+            card.style.display = "block";
+
+        }
+
+        else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
+
+</script>
+<!-- INTRODUCTION -->
+<section class="content">
+    <p>
+        India is one of the world’s <strong>17 mega-diverse countries</strong>, supporting
+        more than <strong>420 species of mammals</strong>. These mammals inhabit a wide
+        range of ecosystems including tropical rainforests, grasslands, deserts,
+        wetlands, mangroves, and alpine regions of the Himalayas.
+    </p>
+
+    <p>
+        Indian mammals play a crucial role in ecosystem stability, seed dispersal,
+        predator-prey balance, and climate regulation. Many species are protected
+        under the <strong>Wildlife Protection Act, 1972</strong>.
+    </p>
+</section>
+
+<!-- FEATURED / FLAGSHIP MAMMALS -->
+<section class="animal-grid">
+
+    <div class="animal-card">
+        <img src="https://cdn.britannica.com/96/170796-050-07DF2FD9/Bengal-tiger-Bandhavgarh-National-Park-India-Madhya.jpg">
+        <h3>Bengal Tiger</h3>
+        <p><strong>Status:</strong> Endangered</p>
+        <p><strong>Habitat:</strong> Forests & grasslands</p>
+        <p><strong>Distribution:</strong> Central, Eastern India</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://wallpapers.com/images/hd/4k-ultra-hd-lions-asiatic-1xkt0swdr8e9s3j2.jpg">
+        <h3>Asiatic Lion</h3>
+        <p><strong>Status:</strong> Endangered</p>
+        <p><strong>Habitat:</strong> Dry deciduous forest</p>
+        <p><strong>Distribution:</strong> Gir, Gujarat</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://www.treehugger.com/thmb/KUskK0A93ZjIA-kHaQJaQqTUkUw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-518423452-2ca3d69942614783b8790a294172ba7a.jpg">
+        <h3>Indian Elephant</h3>
+        <p><strong>Status:</strong> Endangered</p>
+        <p><strong>Habitat:</strong> Forests & grasslands</p>
+        <p><strong>Distribution:</strong> Eastern & Southern India</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://helpingrhinos.org/app/uploads/2023/02/GOH-rhino1-600x400.jpg">
+        <h3>One-horned Rhinoceros</h3>
+        <p><strong>Status:</strong> Vulnerable</p>
+        <p><strong>Habitat:</strong> Floodplain grasslands</p>
+        <p><strong>Distribution:</strong> Assam, West Bengal</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://files.worldwildlife.org/wwfcmsprod/images/Snow_Leopard_hero_species_2021/story_full_width/7w97onamik_species_snowleopard_hero.jpg">
+        <h3>Snow Leopard</h3>
+        <p><strong>Status:</strong> Vulnerable</p>
+        <p><strong>Habitat:</strong> Alpine Himalayas</p>
+        <p><strong>Distribution:</strong> Ladakh, Himachal</p>
+    </div>
+
+    <div class="animal-card">
+        <img src="https://www.pbs.org/wnet/nature/files/2023/02/pexels-flickr-145970-scaled-e1677618270354.jpg">
+        <h3>Red Panda</h3>
+        <p><strong>Status:</strong> Endangered</p>
+        <p><strong>Habitat:</strong> Temperate forests</p>
+        <p><strong>Distribution:</strong> Sikkim, Arunachal</p>
+    </div>
+    <div class="animal-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nagarhole_Kabini_Karnataka_India%2C_Leopard_September_2013.jpg/1280px-Nagarhole_Kabini_Karnataka_India%2C_Leopard_September_2013.jpg">
+    <h3>Indian Leopard</h3>
+    <p><strong>Status:</strong> Vulnerable</p>
+    <p><strong>Habitat:</strong> Forests & hills</p>
+    <p><strong>Distribution:</strong> Across India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://images.rzss.org.uk/media/Edinburgh_Zoo/EZ_animals/Sloth_bear/sloth-bear-cipi-muddy_nose.jpg">
+    <h3>Sloth Bear</h3>
+    <p><strong>Status:</strong> Vulnerable</p>
+    <p><strong>Habitat:</strong> Dry forests</p>
+    <p><strong>Distribution:</strong> Central India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://bucktrader.com/wp-content/uploads/2026/03/Blackbuck-male.jpg">
+    <h3>Blackbuck</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Grasslands</p>
+    <p><strong>Distribution:</strong> Rajasthan & Gujarat</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://res.cloudinary.com/roundglass/image/upload/c_crop,x_0,y_0,w_2560,h_1439,f_auto/ar_16:9,c_fill,w_auto/g_auto,q_auto/v1748855091/rg/collective/media/nilgai-blue-bull-jbhavya-Getty-Images_qwi49v.jpg">
+    <h3>Nilgai</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Grasslands & scrub forests</p>
+    <p><strong>Distribution:</strong> Northern India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://res.cloudinary.com/roundglass/image/upload/c_crop,x_0,y_94,w_1800,h_1012,f_auto/ar_16:9,c_fill,w_auto/g_auto,q_auto/v1752046855/rg/collective/media/manas-gaur-road-stand-one-soumabrata-moulick_wqijb2_owzcss.jpg">
+    <h3>Indian Gaur</h3>
+    <p><strong>Status:</strong> Vulnerable</p>
+    <p><strong>Habitat:</strong> Evergreen forests</p>
+    <p><strong>Distribution:</strong> Western Ghats</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrbo50KfdDhVjMu5do_1q5O6in18NXmY_Y8w&s.jpg">
+    <h3>Wild Water Buffalo</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Habitat:</strong> Wetlands & grasslands</p>
+    <p><strong>Distribution:</strong> Assam & Chhattisgarh</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://fl-i.thgim.com/public/society/30ihgo/article69372350.ece/alternates/FREE_1200/Indian%20grey%20wolf%201.jpg">
+    <h3>Indian Wolf</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Habitat:</strong> Semi-arid grasslands</p>
+    <p><strong>Distribution:</strong> Central & Western India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://www.insightsonindia.com/wp-content/uploads/2025/06/Dhole.jpg">
+    <h3>Dhole (Indian Wild Dog)</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Habitat:</strong> Forests</p>
+    <p><strong>Distribution:</strong> South & Central India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREPosKcsFZrOXhw8tJn-wh7IYR4_WrJEjCMA&s.jpg">
+    <h3>Hanuman Langur</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Forests & urban areas</p>
+    <p><strong>Distribution:</strong> Across India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://www.shankariasparliament.com/uploads/files/lion-tailed-macaque.jpg">
+    <h3>Lion-tailed Macaque</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Habitat:</strong> Rainforests</p>
+    <p><strong>Distribution:</strong> Western Ghats</p>
+</div>
+<div class="animal-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Sambar_%28Cervus_unicolor_unicolor%29_male.jpg">
+    <h3>Sambar Deer</h3>
+    <p><strong>Status:</strong> Vulnerable</p>
+    <p><strong>Habitat:</strong> Forests & grasslands</p>
+    <p><strong>Distribution:</strong> Across India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/066_Chital_in_Ranthambore_National_Park_Photo_by_Giles_Laurent.jpg">
+    <h3>Chital (Spotted Deer)</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Deciduous forests</p>
+    <p><strong>Distribution:</strong> Central & South India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://www.khaosok.com/wp-content/uploads/2016/07/BarkingDeer.jpg">
+    <h3>Barking Deer</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Dense forests</p>
+    <p><strong>Distribution:</strong> Himalayan region</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROXVafMB1bBjjYDoC_vkQ30pMP7I6OQfcCEg&s">
+    <h3>Himalayan Black Bear</h3>
+    <p><strong>Status:</strong> Vulnerable</p>
+    <p><strong>Habitat:</strong> Himalayan forests</p>
+    <p><strong>Distribution:</strong> Jammu & Kashmir, Himachal</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjlVn3jJyAot35cRQ-vVf0zQFgT00TNfYqRw&s.jpg">
+    <h3>Indian Flying Fox</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Forests & urban areas</p>
+    <p><strong>Distribution:</strong> Across India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://res.cloudinary.com/dr0zfbman/images/f_auto,q_auto:good/v1741864715/WordPress%20Content/Indian-pangolin_USAID-Asia-1_21668d34e7/Indian-pangolin_USAID-Asia-1_21668d34e7.jpg?_i=AA">
+    <h3>Indian Pangolin</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Habitat:</strong> Grasslands & forests</p>
+    <p><strong>Distribution:</strong> Peninsular India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://www.experienceandamans.com/blog/wp-content/uploads/2017/12/Dugong-Rarest-sea-cow-in-the-world-1.jpg.webp">
+    <h3>Dugong</h3>
+    <p><strong>Status:</strong> Vulnerable</p>
+    <p><strong>Habitat:</strong> Coastal marine waters</p>
+    <p><strong>Distribution:</strong> Gulf of Mannar</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKMj1tSZQjG6ZDPEzrqtQDJdbaCobtolnOXw&s.jpg">
+    <h3>Indian Fox</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Grasslands & deserts</p>
+    <p><strong>Distribution:</strong> Western & Central India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRko_l_cCOLIRZElaQjFt8zQqKzaPAW3LIoXA&s">
+    <h3>Hoolock Gibbon</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Habitat:</strong> Tropical rainforests</p>
+    <p><strong>Distribution:</strong> Northeast India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSyLVK-lHxakpHi7FUsE9YNPCh8oZlw92gEQ&s">
+    <h3>Himalayan Musk Deer</h3>
+    <p><strong>Status:</strong> Endangered</p>
+    <p><strong>Habitat:</strong> Alpine forests</p>
+    <p><strong>Distribution:</strong> Uttarakhand & Kashmir</p>
+</div>
+<div class="animal-card">
+    <img src="https://media.assettype.com/deccanherald%2F2025-05-03%2F19rcrp3a%2Ffile80efuqf2qyfoty8znc.jpg?rect=0%2C0%2C3072%2C1728&w=undefined&auto=format%2Ccompress&fit=max">
+    <h3>Indian Hare</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Grasslands & scrublands</p>
+    <p><strong>Distribution:</strong> Across India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx806dxDb4Y-SUD3ozD8ED3Qvj9SCO4T_V-Q&s">
+    <h3>Striped Hyena</h3>
+    <p><strong>Status:</strong> Near Threatened</p>
+    <p><strong>Habitat:</strong> Dry forests & deserts</p>
+    <p><strong>Distribution:</strong> Western India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://res.cloudinary.com/roundglass/image/upload/v1672312402/rg/collective/media/smooth-coated-otter-one-frontal-camera-sugandhi-gadadhar-and-rana-belur_qamzhy.jpg">
+    <h3>Smooth-coated Otter</h3>
+    <p><strong>Status:</strong> Vulnerable</p>
+    <p><strong>Habitat:</strong> Rivers & wetlands</p>
+    <p><strong>Distribution:</strong> Northern & Eastern India</p>
+</div>
+
+<div class="animal-card">
+    <img src="https://res.cloudinary.com/roundglass/image/upload/v1674821817/rg/collective/media/nilgiris-coonoor-ratufa-indica-malabar-giant-squirrel-sitting-tree-branch-Dethan-Punalur-Getty-Images_t0rnna.jpg">
+    <h3>Indian Giant Squirrel</h3>
+    <p><strong>Status:</strong> Least Concern</p>
+    <p><strong>Habitat:</strong> Tropical forests</p>
+    <p><strong>Distribution:</strong> Western Ghats</p>
+</div>
+
+</section>
+
+<!-- SCIENTIFIC CLASSIFICATION -->
+<section class="content">
+    <h2>Scientific Classification of Indian Mammals</h2>
+    <ul>
+        <li><strong>Carnivora:</strong> Tigers, Lions, Leopards, Bears</li>
+        <li><strong>Proboscidea:</strong> Elephants</li>
+        <li><strong>Perissodactyla:</strong> Rhinoceros</li>
+        <li><strong>Artiodactyla:</strong> Deer, Antelope</li>
+        <li><strong>Primates:</strong> Langurs, Macaques</li>
+        <li><strong>Chiroptera:</strong> Bats (largest group)</li>
+        <li><strong>Rodentia:</strong> Rats, Squirrels, Porcupines</li>
+        <li><strong>Cetacea:</strong> Dolphins & Whales</li>
+        <li><strong>Sirenia:</strong> Dugong</li>
+    </ul>
+</section>
+
+<!-- COMPLETE COVERAGE STATEMENT -->
+<!-- <section class="content">
+    <h2>Complete Mammal Coverage</h2>
+    <p>
+        This portal includes information on <strong>all mammal species recorded in India</strong>,
+        including large mammals, small carnivores, rodents, bats, and marine mammals.
+        Detailed species-level data is organized scientifically for researchers,
+        wildlife professionals, and conservation authorities.
+    </p>
+</section> -->
+
+<footer>
+    <p>© Indian Forest & Wildlife Management System  | Mammal Species Database</p>
+</footer>
+
+</body>
+</html>

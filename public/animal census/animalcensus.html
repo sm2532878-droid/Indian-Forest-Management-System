@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Census of India | Forest & Wildlife Portal</title>
+    <link rel="stylesheet" href="animalcensus.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<!-- NAVIGATION -->
+<nav>
+
+    <ul class="menu">
+
+        <!-- HOME -->
+        <li>
+            <a href="/landing">Home</a>
+        </li>
+
+        <!-- ANIMALS -->
+        <li class="dropdown">
+
+            <a href="#">Animals ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/indianmammals/indianmammalspg1.html">
+                        Indian Mammals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/EndangeredSpecies/EndangeredSpecies.html">
+                        Endangered Species
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal Census/animalcensus.html">
+                        Animal Census
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- SAFARI -->
+        <li class="dropdown">
+
+            <a href="#">Safari Booking ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/jeepsafari/jeepsafari.html">
+                        Jeep Safari
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/safarirules.html">
+                        Safari Rules
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- UPDATES -->
+        <li class="dropdown">
+
+            <a href="#">Latest Updates ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/news.html">
+                        Wildlife News
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal census report/animalcensusreport.html">
+                        Animal Census Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/tourist advisory/tourist advisory.html">
+                        Tourist Advisory
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- NATIONAL PARKS -->
+        <li class="dropdown">
+
+            <a href="#">National Parks ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/national parks/national parks.html">
+                        National Parks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Wildlife Sanctuaries/Wildlife Sanctuaries.html">
+                        Wildlife Sanctuaries
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Biosphere Reserves/Biosphere Reserves.html">
+                        Biosphere Reserves
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+        <!-- LOGIN -->
+        <li class="dropdown">
+
+            <a href="#">Login ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/admin-logpg">
+                        Admin Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/login">
+                        User Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/signup">
+                        User Signup
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+    <h1>Animal Census of India</h1>
+    <p>Scientific assessment of wildlife populations across Indian forests</p>
+</header>
+
+<!-- SEARCH BAR (UI) -->
+<!-- SEARCH BAR -->
+
+<section class="search-section">
+
+<input type="text"
+       id="searchInput"
+       placeholder="Search by animal name, year, or region">
+
+</section>
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function () {
+
+    const filter =
+    searchInput.value.toLowerCase();
+
+    const rows =
+    document.querySelectorAll(".species-table tr");
+
+    rows.forEach(function(row, index){
+
+        // keep table heading visible
+        if(index === 0){
+            return;
+        }
+
+        const text =
+        row.textContent.toLowerCase();
+
+        if(text.includes(filter)){
+
+            row.style.display = "";
+
+        }
+
+        else{
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+});
+
+</script>
+
+<!-- INTRODUCTION -->
+<section class="content">
+    <p>
+        Wildlife census is a systematic process used to estimate the population,
+        distribution, and density of wild animals across different ecosystems.
+        In India, animal census is conducted periodically by the
+        Forest Departments with support from scientific institutions.
+    </p>
+
+    <p>
+        Census data plays a crucial role in conservation planning, habitat
+        management, policy formulation, and mitigating human-wildlife conflict.
+    </p>
+</section>
+
+
+
+<!-- CENSUS TABLE -->
+<section class="content">
+    <h2>Major Wildlife Census Data (India)</h2>
+
+    <table class="species-table">
+        <tr>
+            <th>Animal</th>
+            <th>Latest Census Year</th>
+            <th>Estimated Population</th>
+            <th>Primary Regions</th>
+            <th>Authority</th>
+        </tr>
+
+        <tr>
+            <td>Bengal Tiger</td>
+            <td>2022</td>
+            <td>3167</td>
+            <td>Central, Eastern, Southern India</td>
+            <td>National Tiger Conservation Authority</td>
+        </tr>
+
+        <tr>
+            <td>Indian Elephant</td>
+            <td>2017</td>
+            <td>~27000</td>
+            <td>Southern, Eastern India</td>
+            <td>Project Elephant</td>
+        </tr>
+
+        <tr>
+            <td>Asiatic Lion</td>
+            <td>2020</td>
+            <td>674</td>
+            <td>Gir Forest, Gujarat</td>
+            <td>Gujarat Forest Department</td>
+        </tr>
+
+        <tr>
+            <td>One-horned Rhinoceros</td>
+            <td>2022</td>
+            <td>~3700</td>
+            <td>Assam, West Bengal</td>
+            <td>Assam Forest Department</td>
+        </tr>
+
+        <tr>
+            <td>Snow Leopard</td>
+            <td>2023</td>
+            <td>~718</td>
+            <td>Himalayan States</td>
+            <td>MoEFCC</td>
+        </tr>
+
+        <tr>
+            <td>Gharial</td>
+            <td>2021</td>
+            <td>~650</td>
+            <td>North Indian Rivers</td>
+            <td>Wildlife Institute of India</td>
+        </tr>
+
+        <tr>
+            <td>Gangetic River Dolphin</td>
+            <td>2020</td>
+            <td>~3000</td>
+            <td>Ganga & Brahmaputra Basin</td>
+            <td>Wildlife Institute of India</td>
+        </tr>
+    </table>
+</section>
+<!-- METHODOLOGY -->
+<section class="content">
+    <h2>Census Methodology</h2>
+    <ul>
+        <li>Direct sighting and block count methods</li>
+        <li>Camera trap surveys</li>
+        <li>Indirect signs (pugmarks, dung, calls)</li>
+        <li>Scientific sampling and GIS mapping</li>
+        <li>Community and forest staff participation</li>
+    </ul>
+</section>
+
+<!-- IMPORTANCE -->
+<section class="content">
+    <h2>Importance of Animal Census</h2>
+    <ul>
+        <li>Tracks population trends of endangered species</li>
+        <li>Supports wildlife conservation programs</li>
+        <li>Helps control poaching and illegal trade</li>
+        <li>Guides sustainable safari tourism</li>
+        <li>Assists climate-change impact assessment</li>
+    </ul>
+</section>
+
+<footer>
+    <p>© Indian Forest & Wildlife Management System  | National Animal Census Database</p>
+</footer>
+
+</body>
+</html>

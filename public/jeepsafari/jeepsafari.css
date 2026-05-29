@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f4;
+}
+
+/* NAVBAR */
+nav {
+    background: #1b5e20;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu a:hover {
+    background: #2e7d32;
+}
+
+/* HEADER */
+.page-header {
+    background: #e8f5e9;
+    padding: 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    color: #1b5e20;
+}
+
+/* CONTENT */
+.content, .forest-section {
+    background: white;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 6px;
+    line-height: 1.7;
+}
+
+/* FOREST GALLERY */
+.forest-grid {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.forest-grid img {
+    width: 33%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* FORM */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+form button {
+    background: #1b5e20;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #2e7d32;
+}
+
+/* FOOTER */
+footer {
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}

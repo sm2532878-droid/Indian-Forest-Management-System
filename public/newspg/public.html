@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+    <title>Wildlife News India | Official Updates</title>
+    <link rel="stylesheet" href="news.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<ul class="menu">
+
+<li><a href="/landing">Home</a></li>
+
+<!-- ANIMALS -->
+        <li class="dropdown">
+
+            <a href="#">Animals ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/indianmammals/indianmammalspg1.html">
+                        Indian Mammals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/EndangeredSpecies/EndangeredSpecies.html">
+                        Endangered Species
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal Census/animalcensus.html">
+                        Animal Census
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+  <!-- SAFARI -->
+        <li class="dropdown">
+
+            <a href="#">Safari Booking ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/jeepsafari/jeepsafari.html">
+                         Jeep Safari
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/safarirules.html">
+                        Safari Rules
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+        <!-- UPDATES -->
+        <li class="dropdown">
+
+            <a href="#">Latest Updates ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/news.html">
+                        Wildlife News
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal census report/animalcensusreport.html">
+                        Animal Census Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/tourist advisory/tourist advisory.html">
+                        Tourist Advisory
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+ <!-- NATIONAL PARKS -->
+        <li class="dropdown">
+
+            <a href="#">National Parks ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/national parks/national parks.html">
+                        National Parks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Wildlife Sanctuaries/Wildlife Sanctuaries.html">
+                        Wildlife Sanctuaries
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Biosphere Reserves/Biosphere Reserves.html">
+                        Biosphere Reserves
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+ <!-- LOGIN -->
+        <li class="dropdown">
+
+            <a href="#">Login ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/admin-logpg">
+                        Admin Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/login">
+                        User Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/signup">
+                        User Signup
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+</ul>
+
+</nav>
+
+
+<header class="page-header">
+    <h1>Wildlife News – India</h1>
+    <p>Forest Department updates, conservation news & wildlife reports</p>
+</header>
+
+<section class="news-container" id="newsContainer">
+    <!-- News will load automatically from backend -->
+</section>
+
+<footer>
+    <p>© Indian Forest & Wildlife Management System | Wildlife News</p>
+</footer>
+
+<script>
+fetch("/api/news")
+.then(res => res.json())
+.then(newsList => {
+    const container = document.getElementById("newsContainer");
+
+    newsList.reverse().forEach(news => {
+        container.innerHTML += `
+        <div class="news-card">
+            <img src="${news.image}">
+            <h2>${news.title}</h2>
+            <p class="meta">${news.location} | ${news.date}</p>
+            <p>${news.content}</p>
+        </div>`;
+    });
+});
+</script>
+
+</body>
+</html>
+

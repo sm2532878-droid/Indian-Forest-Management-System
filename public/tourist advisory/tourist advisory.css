@@ -1,0 +1,186 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY & TYPOGRAPHY
+========================= */
+body {
+    font-family: "Georgia", "Times New Roman", serif; /* Classic look */
+    background-color: #f5f7f5;
+    color: #2c2c2c;
+    line-height: 1.7;
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+    background: #1b5e20;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.menu a:hover {
+    background: #2e7d32;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #2e7d32;
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+.dropdown-content li a {
+    padding: 12px 15px;
+    color: white;
+}
+
+.dropdown-content li a:hover {
+    background: #388e3c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+.page-header {
+    background-color: #e8f5e9;
+    padding: 45px 30px;
+    text-align: center;
+    border-bottom: 1px solid #c8e6c9;
+}
+
+.page-header h1 {
+    color: #1b5e20;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* =========================
+   CONTENT SECTIONS
+========================= */
+.content {
+    background-color: #ffffff;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px 40px;
+    border-radius: 6px;
+    border-left: 6px solid #1b5e20;
+}
+
+/* Section headings */
+.content h2 {
+    color: #1b5e20;
+    font-size: 22px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Paragraphs */
+.content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Lists */
+.content ul {
+    margin-left: 25px;
+}
+
+.content ul li {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   TABLE (if needed later)
+========================= */
+.species-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.species-table th,
+.species-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.species-table th {
+    background-color: #1b5e20;
+    color: white;
+}
+
+/* =========================
+   FORM (Admin / Booking)
+========================= */
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-family: inherit;
+}
+
+form button {
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2e7d32;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    margin-top: 40px;
+    font-size: 14px;
+}

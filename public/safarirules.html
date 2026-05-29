@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Safari Guidelines | Indian Forest & Wildlife Management
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f6f4;
+    color:#222;
+}
+
+/* TOP BAR */
+
+.top-bar{
+    background:#123524;
+    color:white;
+    text-align:center;
+    padding:12px;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* NAVBAR */
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+nav {
+    background-color: #1b5e20;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.menu a:hover {
+    background-color: #2e7d32;
+}
+
+/* =========================
+   DROPDOWN MENU
+========================= */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2e7d32;
+    min-width: 200px;
+    z-index: 999;
+}
+
+.dropdown-content li a {
+    padding: 12px 15px;
+    color: white;
+}
+
+.dropdown-content li a:hover {
+    background-color: #388e3c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO */
+
+.hero{
+    height:300px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)),
+
+    url("https://www.tigersafariindia.co.uk/wp-content/uploads/2021/12/jeep-tiger-safari-in-india.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    width:80%;
+}
+
+.hero-content h1{
+    font-size:68px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.hero-content p{
+    font-size:24px;
+    line-height:1.8;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    width:90%;
+    margin:70px auto;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    color:#1b5e20;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    font-size:18px;
+    color:#555;
+}
+
+/* CARDS */
+
+.rules-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.rule-card{
+    background:white;
+    border-radius:14px;
+    padding:35px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.rule-card:hover{
+    transform:translateY(-5px);
+}
+
+.rule-card h3{
+    color:#1b5e20;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.rule-card ul{
+    padding-left:20px;
+}
+
+.rule-card ul li{
+    margin-bottom:15px;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* ALERT SECTION */
+
+.alert-section{
+    margin-top:60px;
+    background:#e8f5e9;
+    border-left:8px solid #1b5e20;
+    padding:40px;
+    border-radius:12px;
+}
+
+.alert-section h2{
+    color:#1b5e20;
+    margin-bottom:20px;
+    font-size:34px;
+}
+
+.alert-section p{
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* IMAGE GALLERY */
+
+.gallery{
+    margin-top:70px;
+}
+
+.gallery h2{
+    text-align:center;
+    color:#1b5e20;
+    margin-bottom:35px;
+    font-size:42px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:14px;
+    transition:0.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* QUICK INFO */
+
+.info-strip{
+    margin-top:70px;
+    background:#1b5e20;
+    color:white;
+    padding:35px;
+    border-radius:12px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.info-box h3{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.info-box p{
+    font-size:16px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:70px;
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:25px;
+    font-size:15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .rules-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        height:400px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<!-- <div class="top-bar">
+
+INDIAN FOREST & WILDLIFE MANAGEMENT WEBSITE
+
+</div> -->
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<ul class="menu">
+
+<li><a href="/landing">Home</a></li>
+
+<!-- ANIMALS -->
+        <li class="dropdown">
+
+            <a href="#">Animals ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/indianmammals/indianmammalspg1.html">
+                        Indian Mammals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/EndangeredSpecies/EndangeredSpecies.html">
+                        Endangered Species
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal Census/animalcensus.html">
+                        Animal Census
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+  <!-- SAFARI -->
+        <li class="dropdown">
+
+            <a href="#">Safari Booking ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/jeepsafari/jeepsafari.html">
+                         Jeep Safari
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/safarirules.html">
+                        Safari Rules
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+        <!-- UPDATES -->
+        <li class="dropdown">
+
+            <a href="#">Latest Updates ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/news.html">
+                        Wildlife News
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/animal census report/animalcensusreport.html">
+                        Animal Census Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/tourist advisory/tourist advisory.html">
+                        Tourist Advisory
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+ <!-- NATIONAL PARKS -->
+        <li class="dropdown">
+
+            <a href="#">National Parks ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/national parks/national parks.html">
+                        National Parks
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Wildlife Sanctuaries/Wildlife Sanctuaries.html">
+                        Wildlife Sanctuaries
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Biosphere Reserves/Biosphere Reserves.html">
+                        Biosphere Reserves
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+ <!-- LOGIN -->
+        <li class="dropdown">
+
+            <a href="#">Login ▾</a>
+
+            <ul class="dropdown-content">
+
+                <li>
+                    <a href="/admin-logpg">
+                        Admin Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/login">
+                        User Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/signup">
+                        User Signup
+                    </a>
+                </li>
+
+            </ul>
+
+        </li>
+
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Safari Guidelines & Visitor Rules
+</h1>
+
+<p>
+
+Responsible tourism helps protect wildlife,
+preserve forests and ensure safe safari experiences
+for every visitor.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+
+<div class="container">
+
+<!-- TITLE -->
+
+<div class="section-title">
+
+<h2>
+Essential Safari Guidelines
+</h2>
+
+<p>
+
+Every visitor entering National Parks or Tiger Reserves
+must follow Forest Department regulations.
+
+</p>
+
+</div>
+
+<!-- RULES -->
+
+<div class="rules-grid">
+
+<div class="rule-card">
+
+<h3>
+🐅 Wildlife Protection Rules
+</h3>
+
+<ul>
+
+<li>Do not feed or disturb wild animals.</li>
+
+<li>Maintain silence during safari.</li>
+
+<li>Never throw plastic or waste inside forests.</li>
+
+<li>Do not chase animals for photography.</li>
+
+<li>Protect natural habitats and biodiversity.</li>
+
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h3>
+🚙 Safari Vehicle Rules
+</h3>
+
+<ul>
+
+<li>Remain seated inside safari vehicles.</li>
+
+<li>Do not get down from the jeep.</li>
+
+<li>Follow guide and driver instructions.</li>
+
+<li>Over-speeding inside forest areas is prohibited.</li>
+
+<li>Only authorized safari vehicles are allowed.</li>
+
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h3>
+📷 Tourist Guidelines
+</h3>
+
+<ul>
+
+<li>Photography is allowed without disturbing wildlife.</li>
+
+<li>Carry valid ID proof during safari.</li>
+
+<li>Avoid loud music and shouting.</li>
+
+<li>Wear comfortable and natural-colored clothes.</li>
+
+<li>Respect local forest communities.</li>
+
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h3>
+⚠ Safety Instructions
+</h3>
+
+<ul>
+
+<li>Wild animals are unpredictable.</li>
+
+<li>Children should stay with guardians.</li>
+
+<li>Smoking and alcohol are strictly prohibited.</li>
+
+<li>Follow emergency instructions immediately.</li>
+
+<li>Report unsafe activity to forest officials.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ALERT -->
+
+<div class="alert-section">
+
+<h2>
+Important Forest Department Notice
+</h2>
+
+<p>
+
+Safari permits may be cancelled due to weather conditions,
+forest emergencies, wildlife movement or government orders.
+Visitors are requested to cooperate with forest officials
+and support responsible eco-tourism.
+
+</p>
+
+</div>
+
+<!-- GALLERY -->
+
+<div class="gallery">
+
+<h2>
+Responsible Wildlife Tourism
+</h2>
+
+<div class="gallery-grid">
+
+<img src="https://www.sevencorbett.com/wp-content/uploads/2025/01/Kota-Zone-in-Jim-Corbett-1.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Get_Together.jpg">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Beauty_of_Kaziranga_National_Park.jpg">
+
+</div>
+
+</div>
+
+<!-- INFO STRIP -->
+
+<div class="info-strip">
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<h3>
+106+
+</h3>
+
+<p>
+National Parks
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>
+570+
+</h3>
+
+<p>
+Wildlife Sanctuaries
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>
+54
+</h3>
+
+<p>
+Tiger Reserves
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>
+8%
+</h3>
+
+<p>
+Global Biodiversity
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+© Indian Forest & Wildlife Management System | Responsible Tourism & Wildlife Conservation
+
+</footer>
+
+</body>
+
+</html>

@@ -42,27 +42,48 @@ app.post("/signup", (req, res) => {
 });
 
 // Send OTP
-app.post("/send-otp", (req, res) => {
+app.post("/send-otp", async (req, res) => {
     const { email } = req.body;
-    console.log("OTP Requested for",email)
+
+    console.log("OTP Requested for", email);
 
     if (!users.find(u => u.email === email)) {
-        return res.json({ message: "User not registered!" });
+        return res.json({
+            success: false,
+            message: "User not registered!"
+        });
     }
 
     const otp = Math.floor(100000 + Math.random() * 900000);
     otpStore[email] = otp;
-    console.log("OTP is",otp)
 
+    console.log("Generated OTP:", otp);
 
-    transporter.sendMail({
-        from: 'subhamandal938238@gmail.com',
-        to: email,
-        subject: "Forest Management System OTP",
-        text: `Your login OTP is: ${otp}`
-    }, () => res.json({ message: "OTP sent to Gmail" }));
+    try {
+        const info = await transporter.sendMail({
+            from: "indianforestmanagement@gmail.com",
+            to: email,
+            subject: "Forest Management System OTP",
+            text: `Your login OTP is: ${otp}`
+        });
+
+        console.log("Email Sent Successfully:", info.response);
+
+        res.json({
+            success: true,
+            message: "OTP sent successfully"
+        });
+
+    } catch (error) {
+
+        console.error("Email Sending Error:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Failed to send OTP"
+        });
+    }
 });
-
 // Verify OTP
 app.post("/verify-otp", (req, res) => {
     const { email, otp } = req.body;

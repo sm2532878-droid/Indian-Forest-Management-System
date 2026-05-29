@@ -21,10 +21,12 @@ app.get("/news.html", (req, res) => {res.sendFile(__dirname + "/public/newspg/pu
 
 // Gmail SMTP (API)
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
-        user: "indianforestmanagement@gmail.com",
-        pass: "hbevvzeppxbbtwwj"
+        user: process.env.indianforestmanagement@gmail.com,
+        pass: process.env.hbevvzeppxbbtwwj
     }
 });
 

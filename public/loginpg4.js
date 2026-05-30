@@ -7,14 +7,10 @@ function registerUser() {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ name, email })
     })
- .then(res => res.json())
-.then(data => {
-    document.getElementById("msg").innerText = data.message;
+    .then(res => res.json())
+    .then(data => document.getElementById("msg").innerText = data.message);
+}
 
-    if (data.otp) {
-        alert("Your OTP is: " + data.otp);
-    }
-});
 function sendOTP() {
     const email = document.getElementById("loginEmail").value;
 

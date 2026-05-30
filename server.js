@@ -44,6 +44,7 @@ app.post("/signup", (req, res) => {
 
 // Send OTP
 
+// Send OTP
 app.post("/send-otp", (req, res) => {
     const { email } = req.body;
 
@@ -66,6 +67,7 @@ app.post("/send-otp", (req, res) => {
         message: "OTP generated successfully",
         otp: otp
     });
+});
 
         // Send OTP via email
         const mailOptions = {

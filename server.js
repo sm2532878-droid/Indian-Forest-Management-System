@@ -64,12 +64,42 @@ app.post("/send-otp", (req, res) => {
         const mailOptions = {
             from: "indianforestmanagement@gmail.com",
             to: email,
-            subject: "Your OTP for Indian Forest Management System",
-            html: `<h2>Your OTP Code</h2>
-                   <p>Your One-Time Password (OTP) is:</p>
-                   <h1 style="color: green;">${otp}</h1>
-                   <p>This OTP is valid for 10 minutes.</p>
-                   <p>Do not share this OTP with anyone.</p>`
+            subject: "Indian Forest Management System Verificaton Code",
+          html: `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+      
+      <h2 style="color: #2e7d32; text-align: center;">
+        Indian Forest Management System
+      </h2>
+
+      <p>Dear User,</p>
+
+      <p>Your One-Time Password (OTP) is :</p>
+
+      <div style="text-align: center; margin: 20px 0;">
+        <h1 style="color: green; letter-spacing: 5px;">
+          ${otp}
+        </h1>
+      </div>
+
+      <p>This OTP is valid for <strong>10 minutes</strong>.</p>
+
+      <p style="color: red;">
+        Do not share this OTP with anyone.
+      </p>
+
+      <hr>
+
+      <p style="font-size: 12px; color: #666;">
+        If you did not request this verification, please ignore this email.
+      </p>
+
+      <p>
+        Regards,<br>
+        <strong>Indian Forest Management System Team</strong>
+      </p>
+    </div>
+  `
         };
 
         transporter.sendMail(mailOptions, (error, info) => {

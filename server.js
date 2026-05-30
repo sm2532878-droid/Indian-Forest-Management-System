@@ -20,7 +20,6 @@ app.get("/news.html", (req, res) => {res.sendFile(__dirname + "/public/newspg/pu
 
 
 // Gmail SMTP (API)
-
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -43,31 +42,23 @@ app.post("/signup", (req, res) => {
 });
 
 // Send OTP
-
-// Send OTP
 app.post("/send-otp", (req, res) => {
-    const { email } = req.body;
+    try {
+        const { email } = req.body;
 
-    if (!users.find(u => u.email === email)) {
-        return res.json({
-            success: false,
-            message: "User not registered!"
-        });
-    }
+        if (!users.find(u => u.email === email)) {
+            return res.json({
+                success: false,
+                message: "User not registered!"
+            });
+        }
 
-    const otp = Math.floor(100000 + Math.random() * 900000);
+        const otp = Math.floor(100000 + Math.random() * 900000);
 
-    otpStore[email] = otp;
+        otpStore[email] = otp;
 
-    console.log("OTP Requested for", email);
-    console.log("OTP is", otp);
-
-    res.json({
-        success: true,
-        message: "OTP generated successfully",
-        otp: otp
-    });
-});
+        console.log("OTP Requested for", email);
+        console.log("OTP is", otp);
 
         // Send OTP via email
         const mailOptions = {
@@ -217,5 +208,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-

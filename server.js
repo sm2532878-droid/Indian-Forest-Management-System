@@ -66,7 +66,7 @@ app.post("/send-otp", (req, res) => {
         message: "OTP generated successfully",
         otp: otp
     });
-});
+
         // Send OTP via email
         const mailOptions = {
             from: "indianforestmanagement@gmail.com",

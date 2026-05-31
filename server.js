@@ -43,22 +43,28 @@ app.post("/signup", (req, res) => {
 
 // Send OTP
 app.post("/send-otp", (req, res) => {
-    try {
-        const { email } = req.body;
+    const { email } = req.body;
 
-        if (!users.find(u => u.email === email)) {
-            return res.json({
-                success: false,
-                message: "User not registered!"
-            });
-        }
+    if (!users.find(u => u.email === email)) {
+        return res.json({
+            success: false,
+            message: "User not registered!"
+        });
+    }
 
-        const otp = Math.floor(100000 + Math.random() * 900000);
+    const otp = Math.floor(100000 + Math.random() * 900000);
 
-        otpStore[email] = otp;
+    otpStore[email] = otp;
 
-        console.log("OTP Requested for", email);
-        console.log("OTP is", otp);
+    console.log("OTP Requested for", email);
+    console.log("OTP is", otp);
+
+    res.json({
+        success: true,
+        message: "OTP generated successfully",
+        otp: otp
+    });
+});
 
         // Send OTP via email
         const mailOptions = {

@@ -66,73 +66,73 @@ app.post("/send-otp", (req, res) => {
     });
 });
 
-        // Send OTP via email
-        const mailOptions = {
-            from: "indianforestmanagement@gmail.com",
-            to: email,
-            subject: "Indian Forest Management System Verificaton Code",
-          html: `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+//         // Send OTP via email
+//         const mailOptions = {
+//             from: "indianforestmanagement@gmail.com",
+//             to: email,
+//             subject: "Indian Forest Management System Verificaton Code",
+//           html: `
+//     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
       
-      <h2 style="color: #2e7d32; text-align: center;">
-        Indian Forest Management System
-      </h2>
+//       <h2 style="color: #2e7d32; text-align: center;">
+//         Indian Forest Management System
+//       </h2>
 
-      <p>Dear User,</p>
+//       <p>Dear User,</p>
 
-      <p>Your One-Time Password (OTP) is :</p>
+//       <p>Your One-Time Password (OTP) is :</p>
 
-      <div style="text-align: center; margin: 20px 0;">
-        <h1 style="color: green; letter-spacing: 5px;">
-          ${otp}
-        </h1>
-      </div>
+//       <div style="text-align: center; margin: 20px 0;">
+//         <h1 style="color: green; letter-spacing: 5px;">
+//           ${otp}
+//         </h1>
+//       </div>
 
-      <p>This OTP is valid for <strong>10 minutes</strong>.</p>
+//       <p>This OTP is valid for <strong>10 minutes</strong>.</p>
 
-      <p style="color: red;">
-        Do not share this OTP with anyone.
-      </p>
+//       <p style="color: red;">
+//         Do not share this OTP with anyone.
+//       </p>
 
-      <hr>
+//       <hr>
 
-      <p style="font-size: 12px; color: #666;">
-        If you did not request this verification, please ignore this email.
-      </p>
+//       <p style="font-size: 12px; color: #666;">
+//         If you did not request this verification, please ignore this email.
+//       </p>
 
-      <p>
-        Regards,<br>
-        <strong>Indian Forest Management System Team</strong>
-      </p>
-    </div>
-  `
-        };
+//       <p>
+//         Regards,<br>
+//         <strong>Indian Forest Management System Team</strong>
+//       </p>
+//     </div>
+//   `
+//         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.error("Email Sending Error:", error);
-                return res.status(500).json({
-                    success: false,
-                    message: "Failed to send OTP"
-                });
-            } else {
-                console.log("Email sent:", info.response);
-                res.json({
-                    success: true,
-                    message: "OTP sent to your email successfully",
-                });
-            }
-        });
-    } catch (error) {
+//         transporter.sendMail(mailOptions, (error, info) => {
+//             if (error) {
+//                 console.error("Email Sending Error:", error);
+//                 return res.status(500).json({
+//                     success: false,
+//                     message: "Failed to send OTP"
+//                 });
+//             } else {
+//                 console.log("Email sent:", info.response);
+//                 res.json({
+//                     success: true,
+//                     message: "OTP sent to your email successfully",
+//                 });
+//             }
+//         });
+//     } catch (error) {
 
-        console.error("Error:", error);
+//         console.error("Error:", error);
 
-        res.status(500).json({
-            success: false,
-            message: "Failed to process OTP request"
-        });
-    }
-});
+//         res.status(500).json({
+//             success: false,
+//             message: "Failed to process OTP request"
+//         });
+//     }
+// });
 // Verify OTP
 app.post("/verify-otp", (req, res) => {
     const { email, otp } = req.body;

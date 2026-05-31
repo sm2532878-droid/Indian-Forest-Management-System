@@ -55,6 +55,9 @@ function sendOTP() {
         if(data.success){
             alert("Your OTP is: " + data.otp);
         }
+        .then(res => res.json())
+     .then(data => {
+ if (data.success){window.location.href="/landing"} else {document.getElementById("msg").innerText = data.message}});
     });
 }
 function adminLogin(){

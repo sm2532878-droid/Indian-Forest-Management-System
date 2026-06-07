@@ -43,90 +43,96 @@ app.post("/signup", (req, res) => {
 
 // Send OTP
 app.post("/send-otp", (req, res) => {
-    try {
-        const { email } = req.body;
+    const { email } = req.body;
 
-        if (!users.find(u => u.email === email)) {
-            return res.json({
-                success: false,
-                message: "User not registered!"
-            });
-        }
-
-        const otp = Math.floor(100000 + Math.random() * 900000);
-
-        otpStore[email] = otp;
-
-        console.log("OTP Requested for", email);
-        console.log("OTP is", otp);
-
-        // Send OTP via email
-        const mailOptions = {
-            from: "indianforestmanagement@gmail.com",
-            to: email,
-            subject: "Indian Forest Management System Verification Code",
-          html: `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
-      
-      <h2 style="color: #2e7d32; text-align: center;">
-        Indian Forest Management System
-      </h2>
-
-      <p>Dear User,</p>
-
-      <p>Your One-Time Password (OTP) is :</p>
-
-      <div style="text-align: center; margin: 20px 0;">
-        <h1 style="color: green; letter-spacing: 5px;">
-          ${otp}
-        </h1>
-      </div>
-
-      <p>This OTP is valid for <strong>10 minutes</strong>.</p>
-
-      <p style="color: red;">
-        Do not share this OTP with anyone.
-      </p>
-
-      <hr>
-
-      <p style="font-size: 12px; color: #666;">
-        If you did not request this verification, please ignore this email.
-      </p>
-
-      <p>
-        Regards,<br>
-        <strong>Indian Forest Management System Team</strong>
-      </p>
-    </div>
-  `
-        };
-
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.error("Email Sending Error:", error);
-                return res.status(500).json({
-                    success: false,
-                    message: "Failed to send OTP"
-                });
-            } else {
-                console.log("Email sent:", info.response);
-                res.json({
-                    success: true,
-                    message: "OTP sent to your email successfully",
-                });
-            }
-        });
-    } catch (error) {
-
-        console.error("Error:", error);
-
-        res.status(500).json({
+    if (!users.find(u => u.email === email)) {
+        return res.json({
             success: false,
-            message: "Failed to process OTP request"
+            message: "User not registered!"
         });
     }
+
+    const otp = Math.floor(100000 + Math.random() * 900000);
+
+    otpStore[email] = otp;
+
+    console.log("OTP Requested for", email);
+    console.log("OTP is", otp);
+
+    res.json({
+        success: true,
+        message: "OTP generated successfully",
+        otp: otp
+    });
 });
+
+//         // Send OTP via email
+//         const mailOptions = {
+//             from: "indianforestmanagement@gmail.com",
+//             to: email,
+//             subject: "Indian Forest Management System Verificaton Code",
+//           html: `
+//     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
+      
+//       <h2 style="color: #2e7d32; text-align: center;">
+//         Indian Forest Management System
+//       </h2>
+
+//       <p>Dear User,</p>
+
+//       <p>Your One-Time Password (OTP) is :</p>
+
+//       <div style="text-align: center; margin: 20px 0;">
+//         <h1 style="color: green; letter-spacing: 5px;">
+//           ${otp}
+//         </h1>
+//       </div>
+
+//       <p>This OTP is valid for <strong>10 minutes</strong>.</p>
+
+//       <p style="color: red;">
+//         Do not share this OTP with anyone.
+//       </p>
+
+//       <hr>
+
+//       <p style="font-size: 12px; color: #666;">
+//         If you did not request this verification, please ignore this email.
+//       </p>
+
+//       <p>
+//         Regards,<br>
+//         <strong>Indian Forest Management System Team</strong>
+//       </p>
+//     </div>
+//   `
+//         };
+
+//         transporter.sendMail(mailOptions, (error, info) => {
+//             if (error) {
+//                 console.error("Email Sending Error:", error);
+//                 return res.status(500).json({
+//                     success: false,
+//                     message: "Failed to send OTP"
+//                 });
+//             } else {
+//                 console.log("Email sent:", info.response);
+//                 res.json({
+//                     success: true,
+//                     message: "OTP sent to your email successfully",
+//                 });
+//             }
+//         });
+//     } catch (error) {
+
+//         console.error("Error:", error);
+
+//         res.status(500).json({
+//             success: false,
+//             message: "Failed to process OTP request"
+//         });
+//     }
+// });
 // Verify OTP
 app.post("/verify-otp", (req, res) => {
     const { email, otp } = req.body;
